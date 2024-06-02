@@ -6,7 +6,7 @@
     position: fixed;
     width: 100%;
     height: 10vh;
-    background-color:#99958e;
+    background-color:#a9a49c;
     font-family: "Kodchasan", sans-serif;
     font-weight: bold;
     z-index: 999;
@@ -18,7 +18,7 @@
 }
 
 .btn-admin{
-    background-color: #99958e;
+    background-color: #a9a49c;
     padding: 5px;
     border-radius: 40px;
 }
