@@ -1,10 +1,12 @@
+
 .nav-style {
     
     justify-content: space-around;
-    text-align: center;
+    text-align:center;
     position: fixed;
     width: 100%;
-    background-color:#F0E5D8;
+    height: 10vh;
+    background-color:#99958e;
     font-family: "Kodchasan", sans-serif;
     font-weight: bold;
     z-index: 999;
@@ -15,13 +17,22 @@
     padding-left: 15px;
 }
 
-.nav-style button {
-    background-color: #F0E5D8;
+.btn-admin{
+    background-color: #99958e;
     padding: 5px;
     border-radius: 40px;
 }
-.nav-style button:hover{
-    background-color: #75CFB8;
+
+.btn-admin:hover{
+    color:white;
+}
+
+.admin-ico {
+    margin-right: 5px;
+    color: black;
+}
+.admin-ico:hover{
+    color: white;
 }
 
 .telefono {
@@ -34,8 +45,9 @@
 
 .navega {
     background-color: white;
+    height: 8vh;
     width: 100%;
-    margin-top: 66px;
+    margin-top: 90px;
     gap: 30px;
     justify-content: center;
     position: fixed;
@@ -43,7 +55,7 @@
 }
 .navega h5 {
     color: black;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .navega h5:hover {
@@ -57,4 +69,9 @@
 
 .navega a {
     text-decoration: none;
+}
+
+.idw {
+    display: flex;
+    align-items: end;
 }

@@ -24,7 +24,7 @@ const Footer = () => {
             <input className='input' type="mail" placeholder='Ingresá tu mail' 
               onChange={(e) => setEmail(e.target.value)} required />
 
-            <button type='submit' >Suscribirme</button>
+            <button type='submit' >Suscribirme </button>
             </form>
           </div>
         </div>

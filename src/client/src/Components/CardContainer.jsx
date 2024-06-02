@@ -9,10 +9,7 @@ const CardContainer = () => {
         <Card />
         <Card />
         <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+       
 
       
     </div>

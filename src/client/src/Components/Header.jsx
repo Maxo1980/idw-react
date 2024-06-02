@@ -10,7 +10,7 @@ const Header = () => {
       <header className='Header'>
           <nav className='navbar navbar-expand-lg navbar-light nav-style'>
               <div className="logo">
-                  <Link to='/home'>
+                  <Link to='/home'className='idw'>
                   <img src={Logo} alt="logo" />
                   <span>IDW Check-In</span>
                   </Link>
@@ -19,7 +19,12 @@ const Header = () => {
                   <span><i className="fa-solid fa-phone"></i>  0800-1234-5678</span>
                   <span className='horas'>De lunes a Domingo de 8 a 18hs.</span>
               </div>
-              <Link to='/admin'> <button>Adminstrador</button> </Link>
+              <Link to='/admin'>
+                       <i className="fa-solid fa-user admin-ico"></i> 
+                 <button className='btn-admin'>
+                       Adminstrador
+                 </button>
+              </Link>
           </nav>
           <nav className='navbar navbar-expand-lg navbar-light navega '>
               <Link to='/home'> <h5>Inicio</h5> </Link>

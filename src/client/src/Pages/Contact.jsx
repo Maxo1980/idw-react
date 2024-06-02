@@ -19,9 +19,9 @@ const Contact = () => {
           <article className="article-c">
           <div clasNclassNames="data">
                   <h1>CONTÁCTATE CON NOSOTROS</h1>
-                  <p><i className="fa-solid fa-phone"></i>11 1234 5678</p>
-                  <p><i className="fa-solid fa-envelope"></i>idwcheckin@gmail.com</p>
-                  <p><i className="fa-solid fa-location-dot"></i>Av. Concepción, Entre Ríos, Argentina.</p>
+                  <p><i className="fa-solid fa-phone"></i> 0800-1234-5678</p>
+                  <p><i className="fa-solid fa-envelope"></i>   idwcheckin@gmail.com</p>
+                  <p><i className="fa-solid fa-location-dot"></i>   Av.Fake 123 -Ciudad Autonoma de Sion .</p>
               </div>
               <div class="medialinks">
                   <a href="http://facebook.com" target="_blank"><i className="fa-brands fa-facebook-f"></i></a>

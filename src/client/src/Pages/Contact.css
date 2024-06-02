@@ -1,7 +1,9 @@
 .contact-container{
-    margin-top: 130px;
+    margin-top: 160px;
+    margin-bottom: 20px;
     display: flex;
     justify-content:space-around;
+    border-radius: 10px;
 
 }
 
