@@ -1,0 +1,32 @@
+.tabla-container{
+   display: flex;
+   justify-content: center;
+  
+}
+.tabla {
+    width: 40%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tabla-head {
+    background-color: black;
+    color: white;
+    
+}
+
+button{
+    padding: 4px;
+    border-radius: 6px;
+    border: none;
+    font-weight: bold;
+    
+}
+
+.tabla-btn-edit {
+    background-color: cornflowerblue;
+}
+
+.tabla-btn-del {
+    background-color: brown;
+}

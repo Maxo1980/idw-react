@@ -1,0 +1,30 @@
+.article {
+    margin-top: 110px;
+}
+
+.article .portada {
+    height:300px;
+    width: 100%;
+}
+
+.promos{
+    height: 50%;
+    border-radius: 10px;
+}
+
+.col-6 {
+    display: flex;
+    justify-content: center;
+}
+
+.imagenes {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    gap: 50px ;
+
+}
+.imagenes img {
+    height: 130px;
+    border-radius: 20px;
+}
