@@ -1,14 +1,17 @@
 .contenedor{
     display: flex;
+
+   
     
 }
 .contenedor {
     padding: 10px;
     margin-top: 110px;
+    
 }
 
 .about img {
-    height: 380px;
+    height: 70vh;
     border-radius: 10px;
 }
 
@@ -22,7 +25,7 @@
 }
 
 .texto .titulo {
-    font-size: 16px;
+    font-size: 25px;
     color: #454848;
     font-family: "Kodchasan", sans-serif;
     font-weight:bold;
@@ -32,11 +35,12 @@
 }
 
 .texto .cuerpo{
-    
+    margin-top: 40px;
      text-align: justify;
-     font-size: 12px;
+     font-size: 18px;
 }
 
 .texto .saludo{
+    margin-top: 50px;
     text-align: left;
 }
