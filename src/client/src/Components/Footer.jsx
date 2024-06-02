@@ -1,6 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Footer.css'
 const Footer = () => {
+
+  const [email, setEmail] = useState('')
+
+  const enviar = (e) => {
+    e.preventDefault();
+
+    alert(email+', ya estas subscripto para no perderte ninguna novedad!!!!')
+  }
+
   return (
     <div className='Footer'>
       
@@ -9,8 +18,14 @@ const Footer = () => {
           <div className="col suscribe">
             <i className="fa-regular fa-envelope"></i>
             <h5>No te pierdas ninguna promoción</h5>
-            <input className='input' type="mail" placeholder='Ingresá tu mail' />
-            <button>Suscribirme</button>
+
+            <form action="formulario" onSubmit={enviar}>
+            
+            <input className='input' type="mail" placeholder='Ingresá tu mail' 
+              onChange={(e) => setEmail(e.target.value)} required />
+
+            <button type='submit' >Suscribirme</button>
+            </form>
           </div>
         </div>
                 

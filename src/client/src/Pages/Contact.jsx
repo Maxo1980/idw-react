@@ -1,7 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Contact.css'
 
 const Contact = () => {
+
+    const [mensaje , setMensaje ] = useState('')
+
+    const envio = (e) => {
+        e.preventDefault();
+        alert('Gracias!! '+mensaje+', pronto nos vamos a contactar para responder tu consulta' )
+
+        }
+
+
+
+
   return (
    <>   <div className="contact-container">
           <article className="article-c">
@@ -21,9 +33,11 @@ const Contact = () => {
           </article>
 
           <section className="section-c">
-              <form className="form">
+              <form className="form" onSubmit={envio}>
                   <div class="input-box">
-                      <input type="text" required placeholder="Nombre y apellido"/>
+                      <input type="text" required placeholder="Nombre y apellido"
+                        onChange={(e) => setMensaje(e.target.value)}
+                      />
                   </div>
                   <div class="input-box">
                       <input type="email" required placeholder="Correo electrónico"/>

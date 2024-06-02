@@ -1,7 +1,7 @@
 .contact-container{
     margin-top: 130px;
     display: flex;
-    justify-content: space-around;
+    justify-content:space-around;
 
 }
 
@@ -9,7 +9,7 @@
     
     font-family: "Wix Madefor Text", sans-serif;
     width: 60%;
-        background-image: url(../assets/contact.jpg);
+    background-image: url(../assets/contact.jpg);
     background-size: cover;
     background-position: center;
     display: flex;
