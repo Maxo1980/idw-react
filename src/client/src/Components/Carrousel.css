@@ -1,8 +1,6 @@
-.container img{
-    height: 300px;
-}
+
 .carrousel-item {
-    height: 65vh;
+    
     min-height: 400px;
     background: no-repeat center center scroll;
     background-size: cover;

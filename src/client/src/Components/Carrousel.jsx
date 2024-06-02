@@ -1,8 +1,8 @@
 import React from 'react'
 import './Carrousel.css'
-import img1 from '../assets/article.jpg'
-import img2 from '../assets/article2.jpg'
-import img3 from '../assets/article3.jpg'
+import img1 from '../assets/banner1.png'
+import img2 from '../assets/banner2.png'
+import img3 from '../assets/banner3.png'
 const Carrousel = () => {
   return (
     <div className='container'>
