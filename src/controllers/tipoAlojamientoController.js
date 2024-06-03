@@ -4,7 +4,7 @@ const dbConnection = require('../config/dbConfig');
 exports.getAllTiposAlojamiento = async (req, res) => {
   try {
     const connection = await dbConnection.getConnection();
-    const [rows] = await connection.query('SELECT * FROM  tiposAlojamiento');
+    const [rows] = await connection.query('SELECT * FROM  tiposalojamiento');
     connection.release();
     res.json(rows);
   } catch (error) {
