@@ -6,8 +6,8 @@ const Footer = () => {
 
   const enviar = (e) => {
     e.preventDefault();
-
-    alert(email+', ya estas subscripto para no perderte ninguna novedad!!!!')
+    alertify.alert(email,'Ya estas Subscripto! ahora no te vas a perder ninguna novedad! ');
+    
   }
 
   return (

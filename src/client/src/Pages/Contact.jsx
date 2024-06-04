@@ -7,8 +7,7 @@ const Contact = () => {
 
     const envio = (e) => {
         e.preventDefault();
-        alert('Gracias!! '+mensaje+', pronto nos vamos a contactar para responder tu consulta' )
-
+        alertify.alert('Gracias '+mensaje,' Pronto respoderemos tu consulta!');
         }
 
 

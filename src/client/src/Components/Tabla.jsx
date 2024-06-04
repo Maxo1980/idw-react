@@ -4,25 +4,36 @@ import './Tabla.css'
 const Tabla = () => {
 
   const [tabla, setTabla] = useState([])
+  const [del, setDel] = useState('')
   
   //Traer data desde la API
   
-  const URL =  'http://localhost:3001/tiposAlojamiento/getTiposAlojamiento'
+  const URLDATA =  'http://localhost:3001/tiposAlojamiento/getTiposAlojamiento'
+  const URLDELETE = 'http://localhost:3001/tiposAlojamiento/deleteTipoAlojamiento/:id'
 
+  //BUSCAR Y MOSTRAR DATOS DE LA BD
   const showData = async () => {
-    const response = await fetch(URL)
+    const response = await fetch(URLDATA)
     const data = await response.json()
     setTabla(data)
   }
    showData()
 
-   //Borrar datos
+   //BORRAR DATOS
 
-   const borrarDatos = (del) => {
-      
-
-      
+   const borrarDatos = async (dato) => {
+    console.log(dato)
+    // const reponse = await fetch(URLDELETE+dato, {
+    //   method: 'DELETE'
+    // })
+    // const data = await await reponse.json()
+    // setDel(data)      
    }
+   
+   const editarDatos = async (dato) => {
+    console.log(dato)
+   }
+
   return (
     <div className='tabla-container'>
         <table className='tabla'>
@@ -38,8 +49,8 @@ const Tabla = () => {
                   <td>{datos.idTipoAlojamiento}</td>
                   <td>{datos.Descripcion}</td>
                   <td>
-                    <button className='tabla-btn-edit'>Editar</button>
-                    <button className='tabla-btn-del' onClick={borrarDatos(datos.idTipoAlojamiento)}>Borrar</button>
+                    <button className='tabla-btn-edit'onClick={() => editarDatos(datos.idTipoAlojamiento)} >Editar</button>
+                    <button className='tabla-btn-del' onClick={() => borrarDatos(datos.idTipoAlojamiento)}>Borrar</button>
                   </td>
                  </tr> 
               ))}

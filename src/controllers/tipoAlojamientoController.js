@@ -17,7 +17,7 @@ exports.getTipoAlojamientoById = async (req, res) => {
   try {
     const { id } = req.params;
     const connection = await dbConnection.getConnection();
-    const [rows] = await connection.query('SELECT * FROM  tiposAlojamiento WHERE idTipoAlojamiento = ?', [id]);
+    const [rows] = await connection.query('SELECT * FROM  tiposalojamiento WHERE idTipoAlojamiento = ?', [id]);
     connection.release();
     res.json(rows[0]);
   } catch (error) {
@@ -47,7 +47,7 @@ exports.updateTipoAlojamiento = async (req, res) => {
     const { id } = req.params;
     const datosAActualizar = req.body;
     const connection = await dbConnection.getConnection();
-    await connection.query('UPDATE  tiposAlojamiento SET ? WHERE idTipoAlojamiento = ?', [datosAActualizar, id]);
+    await connection.query('UPDATE  tiposalojamiento SET ? WHERE idTipoAlojamiento = ?', [datosAActualizar, id]);
     connection.release();
     res.json({ message: 'Tipo de alojamiento actualizado correctamente' });
   } catch (error) {
@@ -60,7 +60,7 @@ exports.deleteTipoAlojamiento = async (req, res) => {
   try {
     const { id } = req.params;
     const connection = await dbConnection.getConnection();
-    await connection.query('DELETE FROM tiposAlojamiento WHERE idTipoAlojamiento = ?', [id]);
+    await connection.query('DELETE FROM tiposalojamiento WHERE idTipoAlojamiento = ?', [id]);
     connection.release();
     res.json({ message: 'Tipo de alojamiento eliminado correctamente' });
   } catch (error) {
