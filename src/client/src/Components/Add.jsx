@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import './Add.css'
 
+
+
 const Add = () => {
     const [descripcion, SetDescripcion] = useState('')
     
@@ -16,10 +18,10 @@ const Add = () => {
                 headers:  {
                     'content-type': 'application/json',
                 },
-                
                 body: JSON.stringify(json),    
             });
                 if (response.ok){
+                    
                     alert('Se creo correctamente el Alojamiento tipo');
                 }
                 else{

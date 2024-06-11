@@ -4,42 +4,42 @@ import './Tabla.css'
 const Tabla = () => {
 
   const [tabla, setTabla] = useState([])
-  
-  
+    
   //Traer data desde la API
   
   const URLDATA =  'http://localhost:3001/tiposAlojamiento/getTiposAlojamiento'
   const URLDELETE = 'http://localhost:3001/tiposAlojamiento/deleteTipoAlojamiento/'
 
-  //BUSCAR Y MOSTRAR DATOS DE LA BD
+  //MOSTRAR DATOS DE LA BD
+   const showData = async () => {
+    try{
+      const response = await fetch(URLDATA)
+      const data = await response.json()
+      setTabla(data)
+    }catch(error){
+      alertify.alert('Error!', 'No se pudo conectar con la base de datos!', 
+      function(){ alertify.error('No de pudo conectar con la DB'); });
+
+
+    }
+  }
   useEffect(() => {
-    
-      const showData = async () => {
-        try{
-          const response = await fetch(URLDATA)
-          const data = await response.json()
-          setTabla(data)
-        }catch(error){
-          console.log('No de pudo acceder a la DATA', error)
-        }
-      }
-    showData();
+     showData();
   }, [])
  
+
    //BORRAR DATOS
 
    const borrarDatos = async (dato) => {
-     alertify.confirm('Se borrar el registro Nro: '+dato, 'Esta operación no se puede deshacer. ¿Desea continuar?', function(){
-        fetch(URLDELETE+dato, {
+    alertify.confirm('Se borrará el registro Nro: '+dato, 'Esta operación no se puede deshacer. ¿Desea continuar?',  
+      async function(){
+        await fetch(URLDELETE+dato, {
           method: 'DELETE' 
-          })},
+          })
+          showData();
+           },
           function(){ alertify.error('Operación cancelada!')});
-
-
-    
-    
-        
-      }
+     }
    const editarDatos = async (dato) => {
     console.log(dato)
    }
@@ -72,3 +72,6 @@ const Tabla = () => {
 }
 
 export default Tabla
+
+
+
