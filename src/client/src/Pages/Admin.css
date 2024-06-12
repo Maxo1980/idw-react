@@ -1,20 +1,28 @@
-.ingreso-container{
-    margin-top: 160px;
+.admin-menu{
+    margin-top: 10.5rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-
-.btn1 {
-    margin-left: 1em;
-    margin-bottom: 2em;
-    border: none;
-    border-radius: 10px;
-    background-color: #a1dd70;
-    font-size: 14px;
-    padding: 8px;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    background-color: black;
     
+   
+}
+ 
+
+.admin-menu h4  {
+    padding: 0.5rem;
+    color: white;
 }
 
-.btn1:hover{
-    background-color: #f6eec9;
+ a {
+    text-decoration: none;
 }
+h4:hover{
+    color: #75CFB8;
+}
+
+
+
+
+

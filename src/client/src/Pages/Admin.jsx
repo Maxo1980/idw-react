@@ -1,33 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import './Admin.css'
-import Tabla from '../Components/Tabla'
-import Modalingreso from '../Components/Modalingreso'
+import { Link } from 'react-router-dom'
+
 
 
 
 const Admin = () => {
 
-  const handleButonClick = () => {
-    setModalOpen(false)
-  }
-
-  const [modalOpen, setModalOpen] = useState(false);
   return (
     <>
-    <div className='ingreso-container'>
-        
-        <button className='btn1' onClick={() => setModalOpen(true)}>Ingresar nuevo alojamiento</button>
-      
-    </div>
-      <Tabla />
-    {modalOpen && (
-     <Modalingreso
-        OnCancelar={handleButonClick} onClose={handleButonClick}
-      />
-     )}
-    
-    
-    
+      <div className="admin-menu">
+        <Link to='/Alojamientos'><h4>ALOJAMIENTOS</h4></Link>
+        <Link to='/TiposAlojamiento'><h4>TIPOS DE ALOJAMIENTO</h4></Link>
+        <Link to='/Servicios'><h4>SERVICIOS</h4></Link>
+      </div>
 
     </>
   )

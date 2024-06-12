@@ -1,6 +1,6 @@
 .tabla-container{
-   display: flex;
-   justify-content: center;
+   margin-top: 1rem; 
+  
   
 }
 .tabla {
@@ -15,12 +15,20 @@
     
 }
 
-button{
+.tabla-btn-edit,.tabla-btn-del {
     padding: 4px;
     border-radius: 6px;
     border: none;
     font-weight: bold;
     
+}
+.btn-add-tipo {
+   display: flex;
+   gap: 1rem;
+   align-items: center;
+   font-size: 1rem; 
+   width:20%;
+   padding: 1rem;
 }
 
 .tabla-btn-edit {

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './Add.css'
+import { Link } from 'react-router-dom'
 
 
 
@@ -22,11 +23,12 @@ const Add = () => {
             });
                 if (response.ok){
                     
-                    alert('Se creo correctamente el Alojamiento tipo');
+                    alertify.alert('IDW Check-In', 'Alojamiento creado con exito');
+                      
                 }
                 else{
                     
-                    alert('Error al crear el Alojamiento tipo')
+                    alertify.alert('Error!!!', 'No se pudo crear el tipo de alojamiento!');
                 }
            
             
@@ -36,11 +38,13 @@ const Add = () => {
     }
 
   return (
-    <div className='form-container'>
+    <>
         <h2>Alta tipo alojamiento</h2>
+      <div className='form-container'>
         <form onSubmit={enviar}>
-            <div>
-                <label htmlFor='descripcion'>Descripcion</label>
+        
+           
+                <label htmlFor='descripcion'>Descripción</label>
                 <input
                     required 
                     type="text"
@@ -48,11 +52,17 @@ const Add = () => {
                     value={descripcion}
                     onChange={(e) => SetDescripcion(e.target.value)} 
                 />
-            </div>
+           
             <button className='btn-add' type='submit'>Agregar</button>
-        </form>
         
+        </form>
     </div>
+    <Link to='/TiposAlojamiento'>
+    <h3>
+        <i class="fa-solid fa-left-long back">   Volver a listado</i>   
+    </h3>
+    </Link>
+    </>
   )
 }
 
