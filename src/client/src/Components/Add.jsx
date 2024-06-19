@@ -23,7 +23,7 @@ const Add = () => {
             });
                 if (response.ok){
                     
-                    alertify.alert('IDW Check-In', 'Alojamiento creado con exito');
+                    alertify.alert('IDW Check-In', 'Tipo de alojamiento creado con exito');
                       
                 }
                 else{

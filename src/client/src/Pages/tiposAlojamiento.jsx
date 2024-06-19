@@ -1,7 +1,7 @@
 import React from 'react'
 import Admin from './Admin'
 import './tiposAlojamiento.css'
-import TipoAlojCrud from '../Components/TipoAlojCrud'
+import TablaTipoAlojamiento from '../Components/TablaTipoAlojamiento'
 import { Link } from 'react-router-dom'
 
 
@@ -10,7 +10,7 @@ const tiposAlojamiento = () => {
    <>
         <Admin/>
                <Link to='/AddTipoAlojamiento' ><i class="fa-solid fa-circle-plus agregar"> AGREGAR</i></Link> 
-        <TipoAlojCrud/>
+        <TablaTipoAlojamiento / >
    </>
  )}
   
