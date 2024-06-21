@@ -1,63 +1,70 @@
 .table-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin-top: 15rem; */
 }
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 50%;
-    border: 1px solid #ddd;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 50%;
+  border: 1px solid #ddd;
 }
 
-thead{
-    background-color: #333;
-    color: white;
+thead {
+  background-color: #333;
+  color: white;
 }
 
-th, td {
-    text-align: left;
-    padding: 16px;
+th,
+td {
+  text-align: left;
+  padding: 16px;
 }
 
-tr:nth-child(even){
-    background: #f2f2f2;
+tr:nth-child(even) {
+  background: #f2f2f2;
 }
 
 .controles {
-    display: flex;
-    gap: 0.5rem
-
+  display: flex;
+  gap: 0.5rem;
 }
 .controles button {
-    padding: 0.5rem 0.5rem;
-    border-radius: 10px;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    border: none;
+  padding: 0.5rem 0.5rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: none;
 }
 
 .icons {
-    display: flex;
-    
-    font-size: 1.5rem;
-    gap: 1rem
+  display: flex;
+
+  font-size: 1.5rem;
+  gap: 1rem;
 }
 .icons i {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .find {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 .find i {
-    font-size: 2rem;
-    color: #0F6292;
+  font-size: 2rem;
+  color: #0f6292;
 }
 .find input {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
+.editar {
+  color: blue;
+}
 
+.borrar {
+  color: red
+}

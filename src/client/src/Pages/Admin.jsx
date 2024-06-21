@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+
 import "./Admin.css";
 import { Link } from "react-router-dom";
+import Alojamientos from "./Alojamientos";
 
 const Admin = () => {
   return (
@@ -16,6 +17,7 @@ const Admin = () => {
           <h4>SERVICIOS</h4>
         </Link>
       </div>
+      
     </>
   );
 };

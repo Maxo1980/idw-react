@@ -1,106 +1,101 @@
-.contact-container{
-    margin-top: 165px;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content:space-around;
-    border-radius: 10px;
-
+.contact-container {
+  margin-top: 165px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 10px;
 }
 
 .article-c {
-    
-    font-family: "Wix Madefor Text", sans-serif;
-    width: 60%;
-    background-image: url(../assets/contact.jpg);
-    border-radius: 10px;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-       
+  font-family: "Wix Madefor Text", sans-serif;
+  width: 60%;
+  background-image: url(../assets/contact.jpg);
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .section-c {
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .article-c .data h1 {
-    padding-bottom: 30px;
+  padding-bottom: 30px;
 }
 
 .data {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
 .data > p {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 .data > p > i {
-    color: #75CFB8;
-    margin-right: 10px;
-    font-size: 25px;
+  color: #75cfb8;
+  margin-right: 10px;
+  font-size: 25px;
 }
 
 .medialinks {
-    display: flex;
-    gap: 15px;
+  display: flex;
+  gap: 15px;
 }
 
 .medialinks > a {
-    
-    border-radius: 4px;
-    text-decoration: none;
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    transition: .1s;
+  border-radius: 4px;
+  text-decoration: none;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  transition: 0.1s;
 }
 
 .medialinks > a > i {
-    color: #75CFB8;
-    line-height: 40px;
-    font-size: 30px;
+  color: #75cfb8;
+  line-height: 40px;
+  font-size: 30px;
 }
 
 .form {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    gap: 15px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 15px;
 }
 
 .section-c form button,
 .section-c form input,
 .section-c form textarea {
-    font-family: "Wix Madefor Text", sans-serif;
-    width: 100%;
-    padding: .9em;
-    border: none;
-    background: none;
-    outline: none;
-    border-bottom:  1px solid black;
-   }
+  font-family: "Wix Madefor Text", sans-serif;
+  width: 100%;
+  padding: 0.9em;
+  border: none;
+  background: none;
+  outline: none;
+  border-bottom: 1px solid black;
+}
 .section-c form textarea {
-      resize: none;
-}   
+  resize: none;
+}
 .section-c form button {
-    background: #75CFB8;
-    border: none;
-    text-transform: uppercase;
-    padding: 1em
+  background: #75cfb8;
+  border: none;
+  text-transform: uppercase;
+  padding: 1em;
 }
 .section-c form button:hover,
-.section-c form button:focus{
-    background: #88dfca;
-    color: white;
-    transition: background-color 1s ease-out;
-    cursor: pointer;
+.section-c form button:focus {
+  background: #88dfca;
+  color: white;
+  transition: background-color 1s ease-out;
+  cursor: pointer;
 }

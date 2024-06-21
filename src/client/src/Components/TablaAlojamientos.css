@@ -1,0 +1,62 @@
+.table-container-alojamientos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin-top: 15rem; */
+  }
+  .table-container-alojamientos table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 95%;
+    border: 1px solid #ddd;
+  }
+  
+  .table-container-alojamientos thead {
+    background-color: #333;
+    color: white;
+  }
+  
+  .table-container-alojamientos th,
+  td {
+    text-align: left;
+    padding: 16px;
+  }
+  
+  .table-container-alojamientos tr:nth-child(even) {
+    background: #f2f2f2;
+  }
+  
+  .table-container-alojamientos .controles {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .table-container-alojamientos .controles button {
+    padding: 0.5rem 0.5rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: none;
+  }
+  
+  .table-container-alojamientos .icons {
+    display: flex;
+  
+    font-size: 1.5rem;
+    gap: 1rem;
+  }
+  .table-container-alojamientos .icons i {
+    cursor: pointer;
+  }
+  
+  .table-container-alojamientos .find {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .table-container-alojamientos .find i {
+    font-size: 2rem;
+    color: #0f6292;
+  }
+  .table-container-alojamientos .find input {
+    font-size: 1rem;
+  }

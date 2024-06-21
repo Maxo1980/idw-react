@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import "./AddAlojamiento.css";
+import React, { useState, useEffect } from "react";
+import "./AddAlojamientos.css";
+import { useNavigate, useParams } from "react-router-dom";
 
 const AddAlojamiento = () => {
   const [titulo, setTitulo] = useState("");
@@ -10,7 +11,41 @@ const AddAlojamiento = () => {
   const [precioPordia, setPrecioPorDia] = useState("");
   const [cantidadDormitorios, setCantidadDormitorios] = useState("");
   const [cantidadBanios, setCantidadBanios] = useState("");
-  const [estado, setEstado] = useState("");
+  const [estado, setEstado] = useState("disponible");
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const isEditing = Boolean(id)
+  if (isEditing){
+    console.log("true")
+  }
+  else {
+    console.log("false")
+  }
+
+  useEffect(() => {
+    if (isEditing) {
+      const fetchData = async () => {
+        try {
+          const response = await fetch(
+            `http://localhost:3001/alojamiento/getAlojamiento/` + id
+          );
+          const data = await response.json();
+          setTitulo(data.Titulo);
+          setDescripcion(data.Descripcion);
+          setTipoAlojamiento(data.TipoAlojamiento);
+          setLatitud(data.Latitud);
+          setLongitud(data.Longitud);
+          setPrecioPorDia(data.PrecioPorDia);
+          setCantidadDormitorios(data.CantidadDormitorios);
+          setCantidadBanios(data.CantidadBanios);
+          setEstado(data.Estado);
+        } catch (error) {
+          console.error("Error fetching data:", error);
+        }
+      };
+      fetchData();
+    }
+  }, [id, isEditing]);
 
   const enviar = async (e) => {
     e.preventDefault();
@@ -27,20 +62,24 @@ const AddAlojamiento = () => {
       Estado: estado,
     };
     try {
-      const response = await fetch(
-        "http://localhost:3001/alojamiento/createAlojamiento",
-        {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(json),
-        }
-      );
+      const url = isEditing
+        ? `http://localhost:3001/alojamiento//putAlojamiento/` + id
+        : "http://localhost:3001/alojamiento/createAlojamiento";
+
+      const method = isEditing ? "PUT" : "POST";
+
+      const response = await fetch(url, {
+        method,
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(json),
+      });
       if (response.ok) {
-        alertify.alert("IDW Check-In", "Alojamiento creado con exito");
+        alertify.alert("IDW Check-In", isEditing ?  "Alojamiento actualizado con exito" : "Alojamiento creado con exito");
+        navigate("/Alojamientos");
       } else {
-        alertify.alert("Error!!!", "No se pudo crear el alojamiento!");
+        alertify.alert("Error!!!", "No se pudo realizar la operación! ");
       }
     } catch (error) {
       console.error("Error:", error);
@@ -49,11 +88,12 @@ const AddAlojamiento = () => {
 
   return (
     <>
-      <h2>Alta Alojamiento</h2>
       <div className="form-alojamiento">
+        <h2>{isEditing ? "Editar alojamiento" : "Alta alojamiento"}</h2>
         <form onSubmit={enviar} className="form-alojamiento-container">
           <label htmlFor="titulo">Titulo</label>
           <input
+            className="controls"
             required
             type="text"
             id="titulo"
@@ -61,8 +101,10 @@ const AddAlojamiento = () => {
             onChange={(e) => setTitulo(e.target.value)}
           />
 
-          <label htmlFor="descripcion">Descripcion</label>
-          <input
+          <label htmlFor="descripcion">Descripción</label>
+          <textarea
+            className="controls"
+            rows="4"
             required
             type="text"
             id="descripcion"
@@ -72,6 +114,7 @@ const AddAlojamiento = () => {
 
           <label htmlFor="tipoAlojamiento">Tipo de alojamiento</label>
           <input
+            className="controls"
             required
             type="text"
             id="tipoAlojamiento"
@@ -81,6 +124,7 @@ const AddAlojamiento = () => {
 
           <label htmlFor="latitud">Latitud</label>
           <input
+            className="controls"
             required
             type="text"
             id="latitud"
@@ -90,15 +134,17 @@ const AddAlojamiento = () => {
 
           <label htmlFor="logitud">Logitud</label>
           <input
+            className="controls"
             required
             type="text"
             id="logitud"
             value={longitud}
             onChange={(e) => setLongitud(e.target.value)}
           />
-          
-          <label htmlFor="precioPorDia">Precio por día</label>
+
+          <label htmlFor="precioPorDia">Precio por día en U$</label>
           <input
+            className="controls"
             required
             type="text"
             id="precioPorDia"
@@ -108,6 +154,7 @@ const AddAlojamiento = () => {
 
           <label htmlFor="cantidadDormitorios">Cantidad de dormitorios</label>
           <input
+            className="controls"
             required
             type="number"
             min="1"
@@ -120,6 +167,7 @@ const AddAlojamiento = () => {
 
           <label htmlFor="cantidadbanios">Cantidad de baños</label>
           <input
+            className="controls"
             required
             type="number"
             min="1"
@@ -132,6 +180,7 @@ const AddAlojamiento = () => {
 
           <label htmlFor="estado">Estado</label>
           <select
+            className="controls"
             name="estado"
             id="estado"
             value={estado}
@@ -141,7 +190,7 @@ const AddAlojamiento = () => {
             <option value="reservado">Reservado</option>
           </select>
           <button className="btn-alojamiento" type="submit">
-            Agregar alojamiento
+          {isEditing ? "Guardar alojamiento" : "Crear alojamiento"}
           </button>
         </form>
       </div>

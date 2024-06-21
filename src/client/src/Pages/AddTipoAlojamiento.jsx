@@ -1,15 +1,14 @@
-import React from 'react'
-import Admin from './Admin'
-import Add from '../Components/Add'
+import React from "react";
+import Admin from "./Admin";
+import Add from "../Components/Add";
 
 const AddTipoAlojamiento = () => {
   return (
     <>
-        <Admin />
-        <Add />
-
+      <Admin />
+      <Add />
     </>
-  )
-}
+  );
+};
 
-export default AddTipoAlojamiento
+export default AddTipoAlojamiento;

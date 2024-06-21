@@ -1,47 +1,39 @@
-.contenedor{
-    display: flex;
-
-   
-    
+.contenedor {
+  display: flex;
 }
 .contenedor {
-    padding: 10px;
-    margin-top: 160px;
-    
-    
+  padding: 10px;
+  margin-top: 160px;
 }
 
 .about img {
-    height: 70vh;
-    border-radius: 10px;
+  height: 70vh;
+  border-radius: 10px;
 }
 
 .texto {
-    padding: 0 20px 0 20px;
-    display:flex;
-    flex-flow: column;
-    gap:15px;
-    
-    
+  padding: 0 20px 0 20px;
+  display: flex;
+  flex-flow: column;
+  gap: 15px;
 }
 
 .texto .titulo {
-    font-size: 25px;
-    color: #454848;
-    font-family: "Kodchasan", sans-serif;
-    font-weight:bold;
-    font-style: normal;
-    text-align: center;
-    
+  font-size: 25px;
+  color: #454848;
+  font-family: "Kodchasan", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  text-align: center;
 }
 
-.texto .cuerpo{
-    margin-top: 40px;
-     text-align: justify;
-     font-size: 18px;
+.texto .cuerpo {
+  margin-top: 40px;
+  text-align: justify;
+  font-size: 18px;
 }
 
-.texto .saludo{
-    margin-top: 50px;
-    text-align: left;
+.texto .saludo {
+  margin-top: 50px;
+  text-align: left;
 }

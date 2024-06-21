@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./TablaTipoAlojamiento.css";
-import { useNavigate } from "react-router-dom";
+import "./TablaAlojamientos.css";
 import {
   useReactTable,
   getCoreRowModel,
@@ -11,16 +10,14 @@ import {
 } from "@tanstack/react-table";
 import { Link } from "react-router-dom";
 
-const Tabla = () => {
+const TablaAlojamientos = () => {
   const [tabla, setTabla] = useState([]);
   const [sorting, setSorting] = useState([]);
   const [filter, setFilter] = useState("");
-  const navigate = useNavigate();
 
   // Traer data desde la API
-  const URLDATA = "http://localhost:3001/tiposAlojamiento/getTiposAlojamiento";
-  const URLDELETE =
-    "http://localhost:3001/tiposAlojamiento/deleteTipoAlojamiento/";
+  const URLDATA = "http://localhost:3001/alojamiento/getAlojamientos";
+  const URLDELETE = "http://localhost:3001/alojamiento/deleteAlojamiento/";
 
   // Mostrar datos de la BD
   const showData = async () => {
@@ -65,11 +62,43 @@ const Tabla = () => {
   const columns = [
     {
       header: "Registro #",
-      accessorKey: "idTipoAlojamiento",
+      accessorKey: "idAlojamiento",
+    },
+    {
+      header: "Titulo",
+      accessorKey: "Titulo",
     },
     {
       header: "Descripción",
       accessorKey: "Descripcion",
+    },
+    {
+      header: "Tipo de Alojamiento",
+      accessorKey: "TipoAlojamiento",
+    },
+    {
+      header: "Latitud",
+      accessorKey: "Latitud",
+    },
+    {
+      header: "Longitud",
+      accessorKey: "Longitud",
+    },
+    {
+      header: "Precio por día",
+      accessorKey: "PrecioPorDia",
+    },
+    {
+      header: "Cantidad dormitorios",
+      accessorKey: "CantidadDormitorios",
+    },
+    {
+      header: "Cantidad Baños",
+      accessorKey: "CantidadBanios",
+    },
+    {
+      header: "Estado",
+      accessorKey: "Estado",
     },
   ];
 
@@ -87,10 +116,9 @@ const Tabla = () => {
     onSortingChange: setSorting,
     onGlobalFilterChange: setFilter,
   });
-
   return (
     <>
-      <div className="table-container">
+      <div className="table-container-alojamientos">
         <h4>Tipos de Alojamiento</h4>
         <div className="find">
           <i className="fa-solid fa-magnifying-glass"></i>
@@ -115,7 +143,7 @@ const Tabla = () => {
                       header.getContext()
                     )}
                     {
-                      { asc: "⬆️", desc: "⬇️" }[
+                      { asc: " ⬆️", desc: " ⬇️" }[
                         header.column.getIsSorted() ?? null
                       ]
                     }
@@ -135,17 +163,13 @@ const Tabla = () => {
                 ))}
                 <td>
                   <div className="icons">
-                    <i
-                    className="fa-solid fa-pen-to-square editar" 
-                    title="Editar"
-                    onClick= {() => navigate(`/edit/${row.original.idTipoAlojamiento}`, { state: row.original })}
-                    ></i>
+                    <Link to={`/editAlojamiento/${row.original.idAlojamiento}`} >
+                    <i className="fa-solid fa-pen-to-square editar" title="Editar"></i>
+                    </Link>
                     <i
                       className="fa-solid fa-trash borrar"
                       title="Borrar"
-                      onClick={() =>
-                        borrarDatos(row.original.idTipoAlojamiento)
-                      }
+                      onClick={() => borrarDatos(row.original.idAlojamiento)}
                     ></i>
                   </div>
                 </td>
@@ -166,4 +190,4 @@ const Tabla = () => {
   );
 };
 
-export default Tabla;
+export default TablaAlojamientos;

@@ -12,6 +12,7 @@ import TiposAlojamiento from './Pages/tiposAlojamiento'
 import Alojamientos from './Pages/Alojamientos'
 import Servicios from './Pages/Servicios'
 import AddTipoAlojamiento from './Pages/AddTipoAlojamiento'
+import AddAlojamiento from './Pages/AddAlojamiento'
 
 function App() {
   
@@ -21,16 +22,20 @@ function App() {
       <BrowserRouter>
           <Header/>
               <Routes>
-                  <Route exact path='/' element= <Home/> />
-                  <Route exact path='Home' element= <Home/> />
-                  <Route exact path='*' element= <Error404/> />
-                  <Route exact path='/About' element= <About/> />
-                  <Route exact path='/Contact' element= <Contact/> />
-                  <Route exact path='/Admin' element= <Admin/> />
-                  <Route exact path='/TiposAlojamiento' element= <TiposAlojamiento/> />
-                  <Route exact path='/Alojamientos' element= <Alojamientos/> />
-                  <Route exact path='/Servicios' element= <Servicios/> />
-                  <Route exact path='/AddTipoAlojamiento' element= <AddTipoAlojamiento/> />
+                  <Route exact path='/' element= {<Home/>} />
+                  <Route exact path='Home' element= {<Home/>} />
+                  <Route exact path='*' element= {<Error404/>} />
+                  <Route exact path='/About' element= {<About/>} />
+                  <Route exact path='/Contact' element= {<Contact/>} />
+                  <Route exact path='/Admin' element= {<Admin/>} />
+                  <Route exact path='/TiposAlojamiento' element= {<TiposAlojamiento/>} />
+                  <Route exact path='/Alojamientos' element= {<Alojamientos/>} />
+                  <Route exact path='/Servicios' element= {<Servicios/>} />
+                  <Route exact path='/AddAlojamiento' element= {<AddAlojamiento/>} />
+                  <Route exact path='/editAlojamiento/:id' element= {<AddAlojamiento />} />
+                  <Route exact path='/AddTipoAlojamiento' element= {<AddTipoAlojamiento/>} />
+                  <Route exact path='/edit/:id' element= {<AddTipoAlojamiento/>} />
+
               </Routes>
           <Footer/>
       </BrowserRouter>

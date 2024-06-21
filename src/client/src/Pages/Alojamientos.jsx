@@ -1,16 +1,17 @@
-import React from 'react'
-import Admin from './Admin'
-import AddAlojamiento from '../Components/AddAlojamiento'
+import React from "react";
+import Admin from "./Admin";
+import TablaAlojamientos from "../Components/TablaAlojamientos";
+import { Link } from "react-router-dom";
 
 const Alojamientos = () => {
   return (
     <>
-         <Admin/>
-         <h1>alojamiento</h1>
-         <AddAlojamiento/>
+      <Admin />
+      <Link to='/AddAlojamiento' ><i class="fa-solid fa-circle-plus agregar"> AGREGAR</i></Link> 
 
+      <TablaAlojamientos />
     </>
-  )
-}
+  );
+};
 
-export default Alojamientos
+export default Alojamientos;
