@@ -1,6 +1,6 @@
 import React from 'react'
 import './Home.css'
-import Portada from '../assets/article.jpg'
+
 import Promo1 from '../assets/promo1.jpeg'
 import promo2 from '../assets/promo2.jpeg'
 import CardContainer from '../Components/CardContainer'

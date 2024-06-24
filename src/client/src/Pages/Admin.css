@@ -20,3 +20,12 @@ a {
 h4:hover {
   color: #75cfb8;
 }
+
+.opciones-container {
+  margin-top: 6rem;
+  display: flex;
+  justify-content: space-around;
+  font-size: 3rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
+}

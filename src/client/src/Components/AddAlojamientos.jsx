@@ -3,9 +3,10 @@ import "./AddAlojamientos.css";
 import { useNavigate, useParams } from "react-router-dom";
 
 const AddAlojamiento = () => {
+  const [opcion, setOpcion] = useState([]); //para guardar el tipo de alojamiento
   const [titulo, setTitulo] = useState("");
   const [descripcion, setDescripcion] = useState("");
-  const [tipoAlojamiento, setTipoAlojamiento] = useState("");
+  const [tipoAlojamiento, setTipoAlojamiento] = useState("N/I");
   const [latitud, setLatitud] = useState("");
   const [longitud, setLongitud] = useState("");
   const [precioPordia, setPrecioPorDia] = useState("");
@@ -14,12 +15,13 @@ const AddAlojamiento = () => {
   const [estado, setEstado] = useState("disponible");
   const { id } = useParams();
   const navigate = useNavigate();
-  const isEditing = Boolean(id)
-  if (isEditing){
-    console.log("true")
-  }
-  else {
-    console.log("false")
+  const isEditing = Boolean(id);
+  const [imagen, setImagen] = useState(null);
+
+  if (isEditing) {
+    console.log("true");
+  } else {
+    console.log("false");
   }
 
   useEffect(() => {
@@ -46,6 +48,25 @@ const AddAlojamiento = () => {
       fetchData();
     }
   }, [id, isEditing]);
+
+  //TRAE LOS DATOS DESDE LA API PARA LAS OPCIONES DE TIPO ALOJAMIENTO
+  useEffect(() => {
+    const urlta = "http://localhost:3001/tiposAlojamiento/getTiposAlojamiento";
+
+    const fetchData = async () => {
+      try {
+        const response = await fetch(urlta);
+        const data = await response.json();
+        setOpcion(data);
+      } catch (error) {
+        console.log(
+          "No se pudieron traer los datos de tipo alojamiento",
+          error
+        );
+      }
+    };
+    fetchData();
+  }, []);
 
   const enviar = async (e) => {
     e.preventDefault();
@@ -76,7 +97,13 @@ const AddAlojamiento = () => {
         body: JSON.stringify(json),
       });
       if (response.ok) {
-        alertify.alert("IDW Check-In", isEditing ?  "Alojamiento actualizado con exito" : "Alojamiento creado con exito");
+        alertify.alert(
+          "IDW Check-In",
+          isEditing
+            ? "Alojamiento actualizado con exito"
+            : "Alojamiento creado con exito"
+        );
+        
         navigate("/Alojamientos");
       } else {
         alertify.alert("Error!!!", "No se pudo realizar la operación! ");
@@ -113,14 +140,20 @@ const AddAlojamiento = () => {
           />
 
           <label htmlFor="tipoAlojamiento">Tipo de alojamiento</label>
-          <input
+          <select
             className="controls"
-            required
-            type="text"
+            name="tipoAjojamiento"
             id="tipoAlojamiento"
             value={tipoAlojamiento}
             onChange={(e) => setTipoAlojamiento(e.target.value)}
-          />
+          >
+            <option value="">Seleccione...</option>
+            {opcion.map((opc) => (
+              <option key={opc.idTipoAlojamiento} value={opc.Descripcion}>
+                {opc.Descripcion}
+              </option>
+            ))}
+          </select>
 
           <label htmlFor="latitud">Latitud</label>
           <input
@@ -190,7 +223,7 @@ const AddAlojamiento = () => {
             <option value="reservado">Reservado</option>
           </select>
           <button className="btn-alojamiento" type="submit">
-          {isEditing ? "Guardar alojamiento" : "Crear alojamiento"}
+            {isEditing ? "Guardar alojamiento" : "Crear alojamiento"}
           </button>
         </form>
       </div>

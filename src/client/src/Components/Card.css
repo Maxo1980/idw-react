@@ -75,11 +75,20 @@
   justify-content: space-between;
 }
 
-.btn-diponible {
+.btn-disponible {
   font-weight: bold;
   border: none;
-  background-color: red;
+  background: #219c90;
   padding: 8px;
   margin-bottom: 35px;
-  border-radius: 20px;
+  border-radius: 50%;
+}
+
+.btn-reservado {
+  font-weight: bold;
+  border: none;
+  background: #ee4e4e;
+  padding: 8px;
+  margin-bottom: 35px;
+  border-radius: 50%;
 }

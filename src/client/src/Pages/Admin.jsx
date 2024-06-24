@@ -1,7 +1,7 @@
 
 import "./Admin.css";
 import { Link } from "react-router-dom";
-import Alojamientos from "./Alojamientos";
+import CardContainer from "../Components/CardContainer";
 
 const Admin = () => {
   return (
@@ -16,7 +16,13 @@ const Admin = () => {
         <Link to="/Servicios">
           <h4>SERVICIOS</h4>
         </Link>
+        <Link to="/Imagenes">
+          <h4>IMAGENES</h4>
+        </Link>
       </div>
+
+      <CardContainer />
+      
       
     </>
   );

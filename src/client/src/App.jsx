@@ -13,6 +13,9 @@ import Alojamientos from './Pages/Alojamientos'
 import Servicios from './Pages/Servicios'
 import AddTipoAlojamiento from './Pages/AddTipoAlojamiento'
 import AddAlojamiento from './Pages/AddAlojamiento'
+import AddServicio from './Pages/AddServicio'
+import Imagens from './Pages/Imagens'
+import AddImagen from './Pages/AddImagen'
 
 function App() {
   
@@ -31,10 +34,14 @@ function App() {
                   <Route exact path='/TiposAlojamiento' element= {<TiposAlojamiento/>} />
                   <Route exact path='/Alojamientos' element= {<Alojamientos/>} />
                   <Route exact path='/Servicios' element= {<Servicios/>} />
+                  <Route exact path='/Imagenes' element= {<Imagens/>} />
                   <Route exact path='/AddAlojamiento' element= {<AddAlojamiento/>} />
                   <Route exact path='/editAlojamiento/:id' element= {<AddAlojamiento />} />
                   <Route exact path='/AddTipoAlojamiento' element= {<AddTipoAlojamiento/>} />
                   <Route exact path='/edit/:id' element= {<AddTipoAlojamiento/>} />
+                  <Route exact path='/AddServicio' element= {<AddServicio/>} />
+                  <Route exact path='/EditServicio/:id' element= {<AddServicio/>} />
+                  <Route exact path='/addimagen' element= {<AddImagen/>} />
 
               </Routes>
           <Footer/>
