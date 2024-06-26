@@ -15,32 +15,41 @@
 
 .copy {
   display: flex;
-  align-items: center;
+  justify-content: flex-end;
   flex-flow: column;
   color: white;
+  
 }
 .copy .city {
-  font-size: 10px;
+  font-size: 18px;
 }
 .copy .brand {
   font-family: "Kodchasan", sans-serif;
+  font-size: 18px;
+  color:  rgb(98, 203, 179);
+}
+
+.derechos{
+  font-size: 18px;
 }
 
 .tel {
   display: flex;
   flex-flow: column;
+  justify-content: flex-end;
 }
 .tel .horas {
-  font-size: 10px;
+  font-size: 18px;
 }
 .tel .ventas {
   font-weight: bold;
+  color:  rgb(98, 203, 179);
 }
 
 .tel p {
   margin-bottom: 0;
   color: white;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .social {
@@ -52,11 +61,15 @@
   font-size: 25px;
 }
 .social a {
-  color: white;
+  color:  rgb(98, 203, 179);
 }
 
 .social i:hover {
-  color: #75cfb8;
+  color: white;
+}
+
+.icon{
+  color:  rgb(98, 203, 179);
 }
 
 .suscribe {

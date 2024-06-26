@@ -12,7 +12,7 @@ const AddAlojamiento = () => {
   const [precioPordia, setPrecioPorDia] = useState("");
   const [cantidadDormitorios, setCantidadDormitorios] = useState("");
   const [cantidadBanios, setCantidadBanios] = useState("");
-  const [estado, setEstado] = useState("disponible");
+  const [estado, setEstado] = useState("Disponible");
   const { id } = useParams();
   const navigate = useNavigate();
   const isEditing = Boolean(id);
@@ -98,7 +98,7 @@ const AddAlojamiento = () => {
       });
       if (response.ok) {
         alertify.alert(
-          "IDW Check-In",
+          "CASA VISTA INN",
           isEditing
             ? "Alojamiento actualizado con exito"
             : "Alojamiento creado con exito"

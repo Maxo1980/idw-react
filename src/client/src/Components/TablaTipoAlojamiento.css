@@ -31,6 +31,8 @@ tr:nth-child(even) {
   gap: 0.5rem;
 }
 .controles button {
+  background-color: #333;
+  color: #ddd;
   padding: 0.5rem 0.5rem;
   border-radius: 10px;
   margin-top: 1rem;
@@ -67,4 +69,9 @@ tr:nth-child(even) {
 
 .borrar {
   color: red
+}
+
+.text-tipoAlojamiento{
+  font-size: 2rem;
+  padding: 1rem;
 }

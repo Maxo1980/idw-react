@@ -91,7 +91,7 @@ const TablaServicios = () => {
     return (
       <>
         <div className="table-container">
-          <h4>Tipos de Servicios</h4>
+          <h4 className="text-servicios">Alta y baja tipos de servicios</h4>
           <div className="find">
             <i className="fa-solid fa-magnifying-glass"></i>
             <input
@@ -154,10 +154,10 @@ const TablaServicios = () => {
             </tbody>
           </table>
           <div className="controles">
-            <button onClick={() => table.setPageIndex(0)}>Primer Página</button>
-            <button onClick={() => table.previousPage()}>Anterior</button>
-            <button onClick={() => table.nextPage()}>Siguiente</button>
-            <button onClick={() => table.setPageIndex(table.getPageCount() - 1)}>
+            <button className="btn-servicios" onClick={() => table.setPageIndex(0)}>Primer Página</button>
+            <button className="btn-servicios" onClick={() => table.previousPage()}>Anterior</button>
+            <button className="btn-servicios" onClick={() => table.nextPage()}>Siguiente</button>
+            <button className="btn-servicios" onClick={() => table.setPageIndex(table.getPageCount() - 1)}>
               Última Página
             </button>
           </div>

@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./Contact.css";
 
 const Contact = () => {
   const [mensaje, setMensaje] = useState("");
+  const form = useRef();
 
   const envio = (e) => {
     e.preventDefault();
     alertify.alert("Gracias " + mensaje, " Pronto respoderemos tu consulta!");
+    form.current.reset();
   };
 
   return (
@@ -19,11 +21,11 @@ const Contact = () => {
               <i className="fa-solid fa-phone"></i> 0800-1234-5678
             </p>
             <p>
-              <i className="fa-solid fa-envelope"></i> idwcheckin@gmail.com
+              <i className="fa-solid fa-envelope"></i> casavistainn@gmail.com
             </p>
             <p>
-              <i className="fa-solid fa-location-dot"></i> Av.Fake 123 -Ciudad
-              Autonoma de Sion .
+              <i className="fa-solid fa-location-dot"></i> Av. Fake 123 - Ciudad
+              Autonoma de Sion.
             </p>
           </div>
           <div class="medialinks">
@@ -46,7 +48,7 @@ const Contact = () => {
         </article>
 
         <section className="section-c">
-          <form className="form" onSubmit={envio}>
+          <form ref={form} className="form" onSubmit={envio}>
             <div class="input-box">
               <input
                 type="text"

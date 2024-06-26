@@ -3,3 +3,16 @@
   background: no-repeat center center scroll;
   background-size: cover;
 }
+
+.carrousel-inner{
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 40px;
+}
+
+.carrousel-inner img {
+  height: 30rem;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center;
+}

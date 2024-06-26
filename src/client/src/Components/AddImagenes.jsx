@@ -39,7 +39,7 @@ const AddImagenes = () => {
         }
       );
       if (response.ok) {
-        alertify.alert("IDW Check-In", "Operación realizada con exito!");
+        alertify.alert("CASA VISTA INN", "Operación realizada con exito!");
         navigate("/imagenes");
       } else {
         alertify.alert("Error!!!", "No se pudo completar laoperacion... =(");
@@ -51,6 +51,7 @@ const AddImagenes = () => {
 
   return (
     <>
+    <div className="addimagen-container">
       <h2>{id ? "Editar Imagen" : "Agregar Imagen"}</h2>
       <div className="form-container">
         <form onSubmit={enviar}>
@@ -81,6 +82,7 @@ const AddImagenes = () => {
           <i className="fa-solid fa-left-long back"> Volver a listado</i>
         </h3>
       </Link>
+      </div>
     </>
   );
 };

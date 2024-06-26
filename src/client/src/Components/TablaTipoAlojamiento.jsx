@@ -91,7 +91,7 @@ const Tabla = () => {
   return (
     <>
       <div className="table-container">
-        <h4>Tipos de Alojamiento</h4>
+        <h4 className="text-tipoAlojamiento">Alta y baja tipos de alojamientos</h4>
         <div className="find">
           <i className="fa-solid fa-magnifying-glass"></i>
           <input

@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
+
+
 .contenedor {
   display: flex;
 }
@@ -30,10 +33,24 @@
 .texto .cuerpo {
   margin-top: 40px;
   text-align: justify;
-  font-size: 18px;
+  font-size: 25px;
+  font-family: "Dosis", sans-serif;
 }
 
 .texto .saludo {
   margin-top: 50px;
   text-align: left;
+  font-family: "Dosis", sans-serif;
+  font-size: 25PX;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+}
+.logo-img {
+  width: 10%;
 }

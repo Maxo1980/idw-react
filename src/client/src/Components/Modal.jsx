@@ -16,7 +16,7 @@ const Modal = ({ isOpen, onClose, cardData }) => {
           </button>
         </div>
         <div className="custom-modal-body">
-          <Map latitud={cardData.latitud} longitud={cardData.longitud}></Map>
+          <Map className="map"  latitud={cardData.latitud} longitud={cardData.longitud}></Map>
           <p>
             <strong>Descripción:</strong> {cardData.descripcion}
           </p>
@@ -32,14 +32,9 @@ const Modal = ({ isOpen, onClose, cardData }) => {
           <p>
             <strong>Estado:</strong> {cardData.estado}
           </p>
+          
           <p>
-            <strong>Latitud:</strong> {cardData.latitud}
-          </p>
-          <p>
-            <strong>Longitud:</strong> {cardData.longitud}
-          </p>
-          <p>
-            <strong>Precio por día:</strong> {cardData.precio}
+            <strong>Precio por día:</strong> ${cardData.precio}
           </p>
         </div>
       </div>

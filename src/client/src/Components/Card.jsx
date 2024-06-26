@@ -11,11 +11,11 @@ const Card = (props) => {
     switch (props.estado) {
       case "Disponible":
         buttonStyle = "btn-disponible";
-        buttonText = "Disponible";
+        buttonText = "DISPONIBLE";
         break;
       case "Reservado":
         buttonStyle = "btn-reservado";
-        buttonText = "Reservado";
+        buttonText = "RESERVADO";
         break;
       default:
         buttonStyle = "btn-desconocido";
@@ -27,11 +27,23 @@ const Card = (props) => {
   };
 
   const { style, text } = getButtonStyle();
+  
 
   return (
     <div className="card">
       <div className="card-header">
-        <img src={imagen} alt="Imagen" />
+      {props.imagenes && props.imagenes.length > 0 ? (
+          props.imagenes.map((rutaArchivo, index) => (
+            <img
+              key={index}
+              src={rutaArchivo}
+              alt={`Imagen ${index + 1}`}
+              className="imagen-alojamiento"
+            />
+          ))
+        ) : (
+          <img src="/default_image.jpg" alt="Imagen por defecto" />
+        )}
       </div>
       <div className="card-body">
         <h3 className="card-title">{props.titulo}</h3>
@@ -42,10 +54,11 @@ const Card = (props) => {
             <h5>Baños: {props.banios}</h5>
             <h5>Tipo de propiedad: {props.tipo}</h5>
             <h5>Estado: {props.estado}</h5>
+            <h5>Precio: ${props.precio}</h5>
           </div>
           <button className={style}>{text}</button>
         </div>
-        <button onClick={() => props.onMoreInfo({
+        <button className="btn" onClick={() => props.onMoreInfo({
           titulo: props.titulo,
           descripcion: props.descripcion,
           dormitorios: props.dormitorios,
@@ -56,7 +69,7 @@ const Card = (props) => {
           longitud: props.longitud,
           precio: props.precio
         })}>
-          Ver más
+          VER MÁS
         </button>
       </div>
     </div>

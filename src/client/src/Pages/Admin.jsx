@@ -1,7 +1,5 @@
-
 import "./Admin.css";
 import { Link } from "react-router-dom";
-import CardContainer from "../Components/CardContainer";
 
 const Admin = () => {
   return (
@@ -20,10 +18,6 @@ const Admin = () => {
           <h4>IMAGENES</h4>
         </Link>
       </div>
-
-      <CardContainer />
-      
-      
     </>
   );
 };

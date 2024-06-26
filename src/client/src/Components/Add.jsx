@@ -36,7 +36,7 @@ const Add = () => {
         }
       );
       if (response.ok) {
-        alertify.alert("IDW Check-In", "Operación realizada con exito!");
+        alertify.alert("CASA VISTA INN", "Operación realizada con exito!");
         navigate("/TiposAlojamiento");
       } else {
         alertify.alert("Error!!!", "No se pudo completar laoperacion... =(");

@@ -10,36 +10,33 @@ const Header = () => {
           <div className="logo">
             <Link to="/home" className="idw">
               <img src={Logo} alt="logo" />
-              <span>IDW Check-In</span>
+              <span>CASA VISTA INN</span>
             </Link>
           </div>
           <div className="telefono">
             <span>
-              <i className="fa-solid fa-phone"></i> 0800-1234-5678
+              <i className="fa-solid fa-phone phone" ></i> 0800-1234-5678
             </span>
             <span className="horas">De lunes a Domingo de 8 a 18hs.</span>
           </div>
-          <Link to="/admin">
-            <i className="fa-solid fa-user admin-ico"></i>
-            <button className="btn-admin">Adminstrador</button>
+          <Link to="/Alojamientos">
+            <i className="fa-solid fa-user admin-ico"><button className="btn-admin">Adminstrador</button></i>
+            
           </Link>
         </nav>
         <nav className="navbar navbar-expand-lg navbar-light navega ">
           <Link to="/home">
-            {" "}
-            <h5>Inicio</h5>{" "}
+            
+            <h5>INICIO</h5>
           </Link>
           <Link to="/about">
-            <h5>Quienes somos</h5>{" "}
+            <h5>QUIENES SOMOS</h5>
           </Link>
           <Link to="/contact">
-            {" "}
-            <h5>Contacto</h5>{" "}
+            
+            <h5>CONTACTO</h5>
           </Link>
-          <h5>
-            {" "}
-            <i className="fa-solid fa-magnifying-glass"></i> Buscar
-          </h5>
+          
         </nav>
       </header>
     </>

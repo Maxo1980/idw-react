@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
+
+
 .contact-container {
   margin-top: 165px;
   margin-bottom: 20px;
@@ -7,7 +10,7 @@
 }
 
 .article-c {
-  font-family: "Wix Madefor Text", sans-serif;
+  font-family: "Dosis", sans-serif;
   width: 60%;
   background-image: url(../assets/contact.jpg);
   border-radius: 10px;
@@ -17,6 +20,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  font-size: 25px;
 }
 
 .section-c {
@@ -33,10 +37,13 @@
   display: flex;
   flex-direction: column;
   gap: 25px;
+
 }
 
 .data > p {
   font-size: 1rem;
+  
+
 }
 
 .data > p > i {
@@ -69,7 +76,7 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  gap: 15px;
+  gap:15px;
 }
 
 .section-c form button,

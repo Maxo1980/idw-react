@@ -9,15 +9,32 @@ import {
   getFilteredRowModel,
 } from "@tanstack/react-table";
 import { Link } from "react-router-dom";
+import ModalImagen from "./ModalImagen";
+import alertify from "alertifyjs";
 
 const TablaAlojamientos = () => {
   const [tabla, setTabla] = useState([]);
   const [sorting, setSorting] = useState([]);
   const [filter, setFilter] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const [selectedAlojamientoId, setSelectedAlojamientoId] = useState(null);
+  const [imagenes, setInagenes] = useState([]);
 
   // Traer data desde la API
   const URLDATA = "http://localhost:3001/alojamiento/getAlojamientos";
   const URLDELETE = "http://localhost:3001/alojamiento/deleteAlojamiento/";
+  const URLIMAGENES = "http://localhost:3001/imagen/getAllImagenes";
+
+  //Mostrar imagenes
+  const showImages = async () => {
+    try {
+      const response = await fetch(URLIMAGENES);
+      const data = await response.json();
+      setInagenes(data);
+    } catch (error) {
+      alertify.alert("Error!!", "No se pudo conectar con la BD de Imagenes");
+    }
+  };
 
   // Mostrar datos de la BD
   const showData = async () => {
@@ -30,18 +47,32 @@ const TablaAlojamientos = () => {
         "Error!",
         "No se pudo conectar con la base de datos!",
         function () {
-          alertify.error("No de pudo conectar con la DB");
+          alertify.error("No se pudo conectar con la DB");
         }
       );
     }
   };
 
+
+
   useEffect(() => {
     showData();
+    showImages();
   }, []);
 
-  //BORRAR DATOS
+  // Función para abrir el modal
+  const abrirModal = (idAlojamiento) => {
+    setSelectedAlojamientoId(idAlojamiento);
+    setShowModal(true);
+  };
 
+  // Función para cerrar el modal
+  const cerrarModal = () => {
+    setSelectedAlojamientoId(null);
+    setShowModal(false);
+  };
+
+  // BORRAR DATOS
   const borrarDatos = async (dato) => {
     alertify.confirm(
       "Se borrará el registro Nro: " + dato,
@@ -116,10 +147,11 @@ const TablaAlojamientos = () => {
     onSortingChange: setSorting,
     onGlobalFilterChange: setFilter,
   });
+
   return (
     <>
       <div className="table-container-alojamientos">
-        <h4>Tipos de Alojamiento</h4>
+        <h4 className="titulo-aloj">Alta y baja de alojamientos</h4>
         <div className="find">
           <i className="fa-solid fa-magnifying-glass"></i>
           <input
@@ -149,6 +181,8 @@ const TablaAlojamientos = () => {
                     }
                   </th>
                 ))}
+
+                <th>Imagen</th>
                 <th>Acciones</th>
               </tr>
             ))}
@@ -161,31 +195,70 @@ const TablaAlojamientos = () => {
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </td>
                 ))}
+                 <td>
+                 {imagenes
+                    .filter((img) => img.idAlojamiento === row.original.idAlojamiento)
+                    .map((img) => (
+                      <img
+                        key={img.id}
+                        src={img.RutaArchivo}
+                        alt="Alojamiento"
+                        className="imagen-alojamiento"
+                        width="60px"
+                      />
+                    ))}
+                </td>
                 <td>
                   <div className="icons">
-                    <Link to={`/editAlojamiento/${row.original.idAlojamiento}`} >
-                    <i className="fa-solid fa-pen-to-square editar" title="Editar"></i>
+                    <Link to={`/editAlojamiento/${row.original.idAlojamiento}`}>
+                      <i
+                        className="fa-solid fa-pen-to-square editar"
+                        title="Editar"
+                      ></i>
                     </Link>
                     <i
                       className="fa-solid fa-trash borrar"
                       title="Borrar"
                       onClick={() => borrarDatos(row.original.idAlojamiento)}
                     ></i>
+
+                    <i
+                      className="fa-regular fa-image"
+                      title="Agregar imagen"
+                      onClick={() => abrirModal(row.original.idAlojamiento)}
+                    ></i>
                   </div>
                 </td>
+               
               </tr>
             ))}
           </tbody>
         </table>
         <div className="controles">
-          <button onClick={() => table.setPageIndex(0)}>Primer Página</button>
-          <button onClick={() => table.previousPage()}>Anterior</button>
-          <button onClick={() => table.nextPage()}>Siguiente</button>
-          <button onClick={() => table.setPageIndex(table.getPageCount() - 1)}>
+          <button className="btn-aloja" onClick={() => table.setPageIndex(0)}>
+            Primer Página
+          </button>
+          <button className="btn-aloja" onClick={() => table.previousPage()}>
+            Anterior
+          </button>
+          <button className="btn-aloja" onClick={() => table.nextPage()}>
+            Siguiente
+          </button>
+          <button
+            className="btn-aloja"
+            onClick={() => table.setPageIndex(table.getPageCount() - 1)}
+          >
             Última Página
           </button>
         </div>
       </div>
+
+      {/* Renderizado del Modal */}
+      <ModalImagen
+        isOpen={showModal}
+        onClose={cerrarModal}
+        alojamientoId={selectedAlojamientoId}
+      />
     </>
   );
 };
