@@ -1,28 +1,45 @@
 CASA VISTA INN 2024
 
-Instalación:
+Instalación
+Para poner en marcha el proyecto, sigue los siguientes pasos:
 
-1. clonar repositorio
-2. npm install
-3. usar el dump en formato SQL para la exportarción los datos
-4. IMPORTANTE USAR EL PROYECTO NODE DEL REPO YA QUE TANTO LA DB COMO EL NODE SE MODIFICARON PARA QUE FUNCIONE!!!!!!!!!
+Clonar el repositorio:
+git clone https://github.com/Maxo1980/idw-react
 
-librerias usadas en el proyecto.
+Instalar las dependencias:
+npm install
 
-React TanStackTable -----> Para renderizar las tablas
-Bootstrap -----> Algunos estilos
-Alertify -----> Mostrar alertas por patalla
-Leaflet -----> Muestra mapas pasandole latitud y longitud
+Importar los datos a la base de datos utilizando el archivo dump en formato SQL.
+IMPORTANTE: Es crucial utilizar el proyecto Node del repositorio, ya que tanto la base de datos como el entorno Node han sido modificados para asegurar su funcionamiento correcto.
 
-Proyecto creado con Vite, en localhost:5173 
+Levantar el servidor de desarrollo web en la ruta /idw-react/:
+npm run dev
 
-Por eso modificado el cors, controlers tambien modificado por las mayusculas porque no levantaba la DB en Linux
+Levantar el cliente en la ruta /idw-react/src/client/:
+npm run dev
 
-Tomamos la desición de usar esas librerias pars facilitarnos en creado de código ya que estas esta muy bien desarrolladas y probadas
-La estructura de la web esta "inspirada" en www.almundo.com 
+Abrir el navegador y acceder a:
+http://localhost:5173
 
-Esperamos que les guste !!!!! 
-Florencia Lopez Schumacher 
+Librerías Utilizadas
+
+El proyecto hace uso de las siguientes librerías:
+
+React TanStackTable: Para renderizar las tablas.
+Bootstrap: Para algunos estilos.
+Alertify: Para mostrar alertas en pantalla.
+Leaflet: Para mostrar mapas proporcionando latitud y longitud.
+Información Adicional
+
+Framework: Este proyecto ha sido creado utilizando Vite, accesible en http://localhost:5173.
+Modificaciones: Se han realizado ajustes en el CORS y en los controladores (debido a problemas con mayúsculas) para asegurar la compatibilidad con la base de datos en sistemas Linux.
+
+Decisiones de Diseño
+Hemos decidido utilizar estas librerías para facilitar el desarrollo del código, ya que son bien desarrolladas y probadas. La estructura de la web está inspirada en Almundo.
+
+Esperamos que el proyecto sea de su agrado.
+
+Florencia Lopez Schumacher
 Maximiliano Kildoff
 
 
